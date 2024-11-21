@@ -1,6 +1,11 @@
 <script setup>
 import { Head, Link } from "@inertiajs/vue3";
 import Navigation from "@/Components/Navigation.vue";
+import FavoriteApps from "@/Components/FavoriteApps.vue";
+import Comment from "@/Components/Comment.vue";
+import PricePlans from "@/Components/PricePlans.vue";
+import Action from "@/Components/Action.vue";
+import Footer from "@/Components/Footer.vue";
 
 defineProps({
     canLogin: {
@@ -28,7 +33,7 @@ function handleImageError() {
 </script>
 
 <template>
-    <Head title="Contact" />
+    <Head title="Resources" />
     <div>
         <Navigation
             :canLogin="true"
@@ -36,5 +41,15 @@ function handleImageError() {
             :laravelVersion="laravelVersion"
             :phpVersion="phpVersion"
         ></Navigation>
+
+        <FavoriteApps></FavoriteApps>
+
+        <Comment></Comment>
+
+        <PricePlans></PricePlans>
+
+        <Action></Action>
+
+        <Footer></Footer>
     </div>
 </template>

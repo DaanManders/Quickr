@@ -1,5 +1,5 @@
 <script setup>
-import { Head, Link } from "@inertiajs/vue3";
+import { Link } from "@inertiajs/vue3";
 
 defineProps({
     canLogin: {
@@ -24,17 +24,17 @@ defineProps({
         v-if="canLogin"
         class="flex items-center justify-between border-[#e8edf3] border-b-2 py-5 px-40"
     >
-        <div>
+        <a :href="route('Home')" class="hover:opacity-60 transition">
             <i class="fa-solid fa-bolt text-[#00b5d8] me-2"></i>
-            <a :href="route('Home')" class="font-bold">Quickr</a>
-        </div>
+            <span class="font-bold">Quickr</span>
+        </a>
 
         <div class="flex items-center w-1/3">
             <a
                 :class="
                     IsWork
                         ? 'flex items-center text-[#00819b] bg-[#00b4d83a] px-5 py-1 rounded-md mx-2 font-bold'
-                        : 'flex items-center bg-transparent px-5 py-1 rounded-md mx-2 font-bold group'
+                        : 'flex items-center bg-transparent px-5 py-1 rounded-md mx-2 font-bold group hover:opacity-60 transition'
                 "
                 :href="route('Work')"
             >
@@ -47,7 +47,7 @@ defineProps({
                 :class="
                     IsFeatures
                         ? 'flex items-center text-[#00819b] bg-[#00b4d83a] px-5 py-1 rounded-md mx-2 font-bold'
-                        : 'flex items-center bg-transparent px-5 py-1 rounded-md mx-2 font-bold group'
+                        : 'flex items-center bg-transparent px-5 py-1 rounded-md mx-2 font-bold group hover:opacity-60 transition'
                 "
                 :href="route('Features')"
             >
@@ -60,7 +60,7 @@ defineProps({
                 :class="
                     IsResources
                         ? 'flex items-center text-[#00819b] bg-[#00b4d83a] px-5 py-1 rounded-md mx-2 font-bold'
-                        : 'flex items-center bg-transparent px-5 py-1 rounded-md mx-2 font-bold group'
+                        : 'flex items-center bg-transparent px-5 py-1 rounded-md mx-2 font-bold group hover:opacity-60 transition'
                 "
                 :href="route('Resources')"
             >
@@ -73,11 +73,11 @@ defineProps({
                 :class="
                     IsContact
                         ? 'flex items-center text-[#00819b] bg-[#00b4d83a] px-5 py-1 rounded-md mx-2 font-bold'
-                        : 'flex items-center bg-transparent px-5 py-1 rounded-md mx-2 font-bold group'
+                        : 'flex items-center bg-transparent px-5 py-1 rounded-md mx-2 font-bold group hover:opacity-60 transition'
                 "
                 :href="route('Contact')"
             >
-                <span> Contact </span>
+                <span>Contact</span>
             </a>
         </div>
 
@@ -92,15 +92,15 @@ defineProps({
             <template v-else>
                 <Link
                     :href="route('login')"
-                    class="bg-transparent text-[#0f0f0f] py-2 px-3 font-bold"
+                    class="bg-transparent text-[#0f0f0f] py-2 px-3 font-bold hover:opacity-60 transition"
                 >
-                    Log in
+                    Login
                 </Link>
 
                 <Link
                     v-if="canRegister"
                     :href="route('register')"
-                    class="bg-[#00b5d8] text-white py-2 px-5 rounded-md font-bold"
+                    class="bg-[#00b5d8] text-white py-2 px-5 rounded-md font-bold hover:bg-[#00819b] transition"
                 >
                     Register
                 </Link>
