@@ -2,11 +2,11 @@
 import { Head, Link } from "@inertiajs/vue3";
 import Navigation from "@/Components/Navigation.vue";
 import Announcement from "@/Components/Announcement.vue";
-import Heading from "@/Components/Heading.vue";
+import Heading from "@/Components/Home/Heading.vue";
 import Action from "@/Components/Action.vue";
 import Copyright from "@/Components/Copyright.vue";
-import Information from "@/Components/Information.vue";
-import Reviews from "@/Components/Reviews.vue";
+import Information from "@/Components/Home/Information.vue";
+import Reviews from "@/Components/Home/Reviews.vue";
 
 defineProps({
     canLogin: {

@@ -1,7 +1,7 @@
 <template>
     <div
         v-if="isVisible"
-        class="flex items-center justify-center px-10 py-5 ipad:pe-4 bg-[#00b4d818] ipad:justify-between text-xs ipad:text-sm"
+        class="flex items-center justify-center px-10 py-5 ipad:pe-4 bg-[#00b4d818] ipad:justify-between text-base ipad:text-sm"
     >
         <div class="hidden ipad:flex"></div>
         <div class="flex justify-center">

@@ -34,7 +34,7 @@ const isResourcesDropdownVisible = ref(false);
             <img
                 :src="'./images/Brand.svg'"
                 alt="Quickr"
-                class="h-[15px] ipad:h-5"
+                class="h-[20px] ipad:h-5"
             />
         </a>
         <div class="items-center w-1/3 hidden ipad:flex justify-center">
@@ -154,7 +154,7 @@ const isResourcesDropdownVisible = ref(false);
                 <Link
                     v-if="canRegister"
                     :href="route('register')"
-                    class="bg-[#00b5d8] text-white py-2 px-5 rounded-md font-bold hover:bg-[#0097b5ff] transition"
+                    class="bg-[#00b5d8] text-white py-2 px-5 rounded-full font-bold hover:bg-[#0097b5ff] transition"
                 >
                     Register
                 </Link>
@@ -162,7 +162,7 @@ const isResourcesDropdownVisible = ref(false);
         </div>
         <div class="ipad:hidden">
             <i
-                class="fa-solid fa-bars text-[#00b5d8] ipad:hidden text-base py-1.5 text-[15px]"
+                class="fa-solid fa-bars text-[#00b5d8] ipad:hidden text-base py-1.5 text-[20px]"
             ></i>
         </div>
     </nav>
