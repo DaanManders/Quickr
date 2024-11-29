@@ -1,21 +1,27 @@
 <template>
+    <!-- Reviews Header | Home Interface -->
     <div
         class="flex justify-center font-poppins font-bold text-[#002431] text-xl ipad:text-4xl ipad:pt-20 ipad:pb-32 py-10"
     >
         <h1>What Our Users Say 🌍</h1>
     </div>
+    <!-- Review Overview | Home Interface -->
     <div class="flex justify-center w-full">
+        <!-- Left Review | Home Interface -->
         <div
             class="w-44 ipad:w-1/3 border-[1px] border-[d7dadc] rounded-lg p-3 me-1 ipad:me-3 shadow-md -rotate-6 bg-white"
         >
+            <!-- Review Details | Home Interface -->
             <div>
                 <div class="text-sm ipad:text-base mb-2">
+                    <!-- Review Rating | Home Interface -->
                     <i class="fa-solid fa-star text-[#00b5d8] me-0.5"></i>
                     <i class="fa-solid fa-star text-[#00b5d8] me-0.5"></i>
                     <i class="fa-solid fa-star text-[#00b5d8] me-0.5"></i>
                     <i class="fa-solid fa-star text-[#00b5d8] me-0.5"></i>
                     <i class="fa-solid fa-star text-[#00b5d8]"></i>
                 </div>
+                <!-- Review Input | Home Interface -->
                 <p
                     class="text-base ipad:text-base italic text-[#002431] font-semibold mb-2"
                 >
@@ -23,6 +29,7 @@
                     whole new level, perfect!"
                 </p>
             </div>
+            <!-- Account Details | Home Interface -->
             <div class="flex items-center ipad:mt-5">
                 <div
                     class="bg-[#00b4d85d] h-6 w-6 ipad:h-9 ipad:w-9 rounded-full"
@@ -45,17 +52,21 @@
                 </div>
             </div>
         </div>
+        <!-- Right Review | Home Interface -->
         <div
             class="w-44 ipad:w-1/3 border-[1px] border-[d7dadc] rounded-lg p-3 ms-1 ipad:ms-3 shadow-md rotate-12 bg-white"
         >
+            <!-- Review Details | Home Interface -->
             <div>
                 <div class="text-sm ipad:text-base mb-2">
+                    <!-- Review Rating | Home Interface -->
                     <i class="fa-solid fa-star text-[#00b5d8] me-0.5"></i>
                     <i class="fa-solid fa-star text-[#00b5d8] me-0.5"></i>
                     <i class="fa-solid fa-star text-[#00b5d8] me-0.5"></i>
                     <i class="fa-solid fa-star text-[#00b5d8] me-0.5"></i>
                     <i class="fa-solid fa-star text-[#00b5d8a7]"></i>
                 </div>
+                <!-- Review Input | Home Interface -->
                 <p
                     class="text-base ipad:text-base italic text-[#002431] font-semibold mb-2"
                 >
@@ -63,6 +74,7 @@
                     sleek and easy to use."
                 </p>
             </div>
+            <!-- Account Details | Home Interface -->
             <div class="flex items-center ipad:mt-5">
                 <div
                     class="bg-[#00b4d85d] h-6 w-6 ipad:h-9 ipad:w-9 rounded-full"

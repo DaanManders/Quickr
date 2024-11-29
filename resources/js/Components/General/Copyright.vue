@@ -1,7 +1,9 @@
 <template>
+    <!-- Copyright Division | Website Component -->
     <div
         class="bg-[#ededf0] flex items-center justify-between py-3 px-3 ipad:px-3"
     >
+        <!-- Copyright Start | Website Component -->
         <div class="text-[#5b5b5b] text-xs font-medium ipad:text-[12px]">
             <h1>
                 © 2024
@@ -9,6 +11,7 @@
                 All Rights Reserved.
             </h1>
         </div>
+        <!-- Copyright End | Website Component -->
         <div class="text-[#5b5b5b] text-xs font-medium ipad:text-[12px]">
             <span class="me-1 hover:underline cursor-pointer"
                 >Terms of Service</span

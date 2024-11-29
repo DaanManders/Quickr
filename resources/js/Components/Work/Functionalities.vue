@@ -1,13 +1,15 @@
 <template>
+    <!-- Mobile View | Work Interface -->
     <div class="bg-[#ededf0] flex flex-col ipad:hidden items-center py-20">
+        <!-- Functionalities Header | Work Interface -->
         <div class="font-poppins font-bold text-[#002431] text-xl">
             <h1>Perfect for every Moment</h1>
         </div>
         <div
             class="flex flex-row items-center overflow-x-auto justify-start pt-10 w-full max-w-screen-lg"
         >
+            <!-- App Function | Features Interface -->
             <div class="flex flex-col items-center w-full">
-                <!-- Only one div is visible at a time -->
                 <div
                     class="h-40 w-40 bg-[#00b4d8] flex justify-center rounded-full"
                 >
@@ -27,15 +29,17 @@
             </div>
         </div>
     </div>
+    <!-- Desktop View | Work Interface -->
     <div class="bg-[#ededf0] hidden ipad:flex flex-col items-center py-20">
+        <!-- Functionalities Header | Work Interface -->
         <div class="font-poppins font-bold text-[#002431] text-4xl">
             <h1>Perfect for every Moment</h1>
         </div>
         <div
             class="flex flex-row items-center overflow-x-auto justify-start pt-20 w-full max-w-screen-lg"
         >
+            <!-- App Function | Features Interface -->
             <div class="flex flex-col items-center w-full">
-                <!-- Only one div is visible at a time -->
                 <div
                     class="h-40 w-40 bg-[#00b4d8] flex justify-center rounded-full"
                 >
@@ -53,8 +57,8 @@
                     </a>
                 </div>
             </div>
+            <!-- App Function | Features Interface -->
             <div class="flex flex-col items-center w-full">
-                <!-- Only one div is visible at a time -->
                 <div
                     class="h-40 w-40 bg-[#00b4d8] flex justify-center rounded-full"
                 >
@@ -72,8 +76,8 @@
                     </a>
                 </div>
             </div>
+            <!-- App Function | Features Interface -->
             <div class="flex flex-col items-center w-full">
-                <!-- Only one div is visible at a time -->
                 <div
                     class="h-40 w-40 bg-[#00b4d8] flex justify-center rounded-full"
                 >

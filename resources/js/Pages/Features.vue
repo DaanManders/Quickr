@@ -1,6 +1,10 @@
 <script setup>
-import { Head, Link } from "@inertiajs/vue3";
-import Navigation from "@/Components/Navigation.vue";
+import { Head } from "@inertiajs/vue3";
+import Navigation from "@/Components/Default/Navigation.vue";
+import Information from "@/Components/Features/Information.vue";
+import Features from "@/Components/Features/Features.vue";
+import Banner from "@/Components/General/Banner.vue";
+import Copyright from "@/Components/General/Copyright.vue";
 
 defineProps({
     canLogin: {
@@ -18,23 +22,30 @@ defineProps({
         required: true,
     },
 });
-
-function handleImageError() {
-    document.getElementById("screenshot-container")?.classList.add("!hidden");
-    document.getElementById("docs-card")?.classList.add("!row-span-1");
-    document.getElementById("docs-card-content")?.classList.add("!flex-row");
-    document.getElementById("background")?.classList.add("!hidden");
-}
 </script>
 
 <template>
-    <Head title="Contact" />
-    <div>
+    <div class="main-container flex flex-col min-h-screen">
+        <Head title="Features" />
+
+        <!-- Navigation | Features Interface -->
         <Navigation
             :canLogin="true"
             :canRegister="true"
             :laravelVersion="laravelVersion"
             :phpVersion="phpVersion"
         ></Navigation>
+
+        <!-- Main Content | Features Interface -->
+        <div class="main-content flex-grow">
+            <Information></Information>
+            <Features></Features>
+        </div>
+
+        <!-- Footer | Features Interface -->
+        <div class="footer mt-auto">
+            <Banner></Banner>
+            <Copyright></Copyright>
+        </div>
     </div>
 </template>

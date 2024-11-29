@@ -1,12 +1,12 @@
 <script setup>
-import { Head, Link } from "@inertiajs/vue3";
-import Navigation from "@/Components/Navigation.vue";
-import Announcement from "@/Components/Announcement.vue";
+import { Head } from "@inertiajs/vue3";
+import Navigation from "@/Components/Default/Navigation.vue";
+import Announcement from "@/Components/General/Announcement.vue";
 import Heading from "@/Components/Home/Heading.vue";
-import Action from "@/Components/Action.vue";
-import Copyright from "@/Components/Copyright.vue";
 import Information from "@/Components/Home/Information.vue";
 import Reviews from "@/Components/Home/Reviews.vue";
+import Banner from "@/Components/General/Banner.vue";
+import Copyright from "@/Components/General/Copyright.vue";
 
 defineProps({
     canLogin: {
@@ -27,10 +27,10 @@ defineProps({
 </script>
 
 <template>
-    <div class="flex flex-col min-h-screen">
+    <div class="main-container flex flex-col min-h-screen">
         <Head title="Home" />
 
-        <!-- Navigation -->
+        <!-- Navigation | Home Interface -->
         <Navigation
             :canLogin="true"
             :canRegister="true"
@@ -38,17 +38,17 @@ defineProps({
             :phpVersion="phpVersion"
         ></Navigation>
 
-        <!-- Main Content -->
-        <div class="flex-grow">
+        <!-- Main Content | Home Interface -->
+        <div class="main-content flex-grow">
             <Announcement></Announcement>
             <Heading></Heading>
             <Information></Information>
             <Reviews></Reviews>
         </div>
 
-        <!-- Footer -->
-        <div class="mt-auto">
-            <Action></Action>
+        <!-- Footer | Home Interface -->
+        <div class="footer mt-auto">
+            <Banner></Banner>
             <Copyright></Copyright>
         </div>
     </div>
