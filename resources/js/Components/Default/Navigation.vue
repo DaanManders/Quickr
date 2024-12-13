@@ -139,10 +139,10 @@ const isResourcesDropdownVisible = ref(false);
         <div class="hidden ipad:flex">
             <Link
                 v-if="$page.props.auth?.user"
-                :href="route('dashboard')"
-                class="rounded-md px-3 py-2 text-[#002431] ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white"
+                :href="route('Portal')"
+                class="bg-[#00b5d8] text-white py-2 px-5 rounded-full font-bold hover:bg-[#0097b5ff] transition"
             >
-                Dashboard
+                Portal
             </Link>
             <template v-else>
                 <Link
