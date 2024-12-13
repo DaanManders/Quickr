@@ -143,7 +143,7 @@ const Return = () => {
                         </div>
                     </div>
                     <a
-                        class="bg-[#00b4d8] px-3 py-1 rounded-full text-[#fff] text-sm font-semibold"
+                        class="bg-[#00b4d8] px-3 py-1 rounded-full text-[#fff] text-sm font-semibold cursor-pointer hover:opacity-85 transition"
                     >
                         Join
                     </a>
