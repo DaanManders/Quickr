@@ -62,6 +62,8 @@ Route::prefix('portal')->group(function () {
     Route::post('/', [WorkspaceController::class, 'store'])->name('Portal');
 });
 
+Route::get('/workspace/{Workspace}', [WorkspaceController::class, 'show'])->name('Workspace');
+
 Route::prefix('workspace')->group(function () {
     Route::post('/', [WorkspaceController::class, 'store'])->name('workspace.store');
 });

@@ -48,9 +48,11 @@ class WorkspaceController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Workspace $workspace)
+    public function show(Workspace $Workspace)
     {
-        //
+        return Inertia::render('Workspace', [
+            'Workspace' => $Workspace,
+        ]);
     }
 
     /**
