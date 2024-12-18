@@ -13,14 +13,18 @@ class WorkspaceController extends Controller
      */
     public function index()
     {
-        // Get the workspaces from the database
-        $Workspaces = Workspace::all();
+        // Get the currently authenticated user
+        $User = auth()->user();
+
+        // Get the workspaces that belong to the authenticated user
+        $Workspaces = Workspace::where('user_id', $User->id)->get();
 
         // Pass the data to the Inertia view
         return Inertia::render('Portal', [
             'Workspaces' => $Workspaces,
         ]);
     }
+
 
     /**
      * Show the form for creating a new resource.
@@ -55,6 +59,16 @@ class WorkspaceController extends Controller
         ]);
     }
 
+        /**
+     * Display the specified resource.
+     */
+    public function settings(Workspace $Workspace)
+    {
+        return Inertia::render('Settings', [
+            'Workspace' => $Workspace,
+        ]);
+    }
+
     /**
      * Show the form for editing the specified resource.
      */
@@ -66,16 +80,29 @@ class WorkspaceController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Workspace $workspace)
+    public function update(Request $Request, Workspace $Workspace)
     {
-        //
+        $Validate = $Request->validate([
+            'name' => 'required|string|max:30',
+        ]);
+
+        $Workspace->update([
+            'name' => $Validate['name'],
+        ]);
+
+        return Inertia::render('Settings', [
+            'Workspace' => $Workspace,
+        ]);
     }
+
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Workspace $workspace)
+    public function destroy(Workspace $Workspace)
     {
-        //
+        $Workspace->delete();
+
+        return redirect()->route('Portal');
     }
 }

@@ -62,7 +62,11 @@ Route::prefix('portal')->group(function () {
     Route::post('/', [WorkspaceController::class, 'store'])->name('Portal');
 });
 
-Route::get('/workspace/{Workspace}', [WorkspaceController::class, 'show'])->name('Workspace');
+Route::get('/workspace/{Workspace}/dashboard', [WorkspaceController::class, 'show'])->name('Workspace');
+
+Route::get('/workspace/{Workspace}/settings', [WorkspaceController::class, 'settings'])->name('Settings');
+Route::put('/workspace/{Workspace}/settings', [WorkspaceController::class, 'update'])->name('workspace.update');
+Route::delete('/workspace/{Workspace}/settings', [WorkspaceController::class, 'destroy'])->name('workspace.destroy');
 
 Route::prefix('workspace')->group(function () {
     Route::post('/', [WorkspaceController::class, 'store'])->name('workspace.store');

@@ -1,16 +1,14 @@
 <script setup>
-import { ref } from "vue"; // Make sure to use ref for reactivity
+import { ref } from "vue";
 
 let Closed = ref(false);
 let Expanded = ref(true);
 
+defineProps(["Workspace"]);
+
 const Toggle = () => {
-    Closed.value = !Closed.value; // Toggling the "Closed" state
-    Expanded.value = !Expanded.value; // Toggling the "Expanded" state
-    console.log("Toggled States:", {
-        Closed: Closed.value,
-        Expanded: Expanded.value,
-    });
+    Closed.value = !Closed.value;
+    Expanded.value = !Expanded.value;
 };
 </script>
 
@@ -25,7 +23,15 @@ const Toggle = () => {
                 class="bg-[#ededf088] border-[#dedee288] flex items-center justify-center border-2 rounded-md w-14 h-14"
             >
                 <img
-                    :src="'../images/Vektora.png'"
+                    :src="
+                        Workspace.id === 38
+                            ? '/images/Cycle.jpg'
+                            : Workspace.id === 39
+                            ? '/images/Odama.png'
+                            : Workspace.id === 41
+                            ? '/images/Vektora.png'
+                            : ''
+                    "
                     class="rounded-md h-9 w-9"
                 />
             </div>
@@ -39,8 +45,14 @@ const Toggle = () => {
                             >Tools</span
                         >
                     </div>
-                    <div
-                        class="bg-transparent border-transparent flex items-center justify-center rounded-md w-10 h-10 border-2 mb-1"
+                    <a
+                        :href="route('Workspace', Workspace)"
+                        :class="
+                            CurrentPath ===
+                            '/workspace/' + Workspace.id + '/dashboard'
+                                ? 'bg-[#00819b30] border-[#00819b53] flex items-center justify-center rounded-md w-10 h-10 border-2 mb-1'
+                                : 'bg-transparent border-transparent flex items-center justify-center rounded-md w-10 h-10 border-2 mb-1'
+                        "
                     >
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -48,7 +60,12 @@ const Toggle = () => {
                             viewBox="0 0 24 24"
                             stroke-width="1.5"
                             stroke="currentColor"
-                            class="text-[#000000a1] size-6"
+                            :class="
+                                CurrentPath ===
+                                '/workspace/' + Workspace.id + '/dashboard'
+                                    ? 'text-[#00819b53] size-6'
+                                    : 'text-[#000000a1] size-6'
+                            "
                         >
                             <path
                                 stroke-linecap="round"
@@ -56,7 +73,7 @@ const Toggle = () => {
                                 d="M13.5 16.875h3.375m0 0h3.375m-3.375 0V13.5m0 3.375v3.375M6 10.5h2.25a2.25 2.25 0 0 0 2.25-2.25V6a2.25 2.25 0 0 0-2.25-2.25H6A2.25 2.25 0 0 0 3.75 6v2.25A2.25 2.25 0 0 0 6 10.5Zm0 9.75h2.25A2.25 2.25 0 0 0 10.5 18v-2.25a2.25 2.25 0 0 0-2.25-2.25H6a2.25 2.25 0 0 0-2.25 2.25V18A2.25 2.25 0 0 0 6 20.25Zm9.75-9.75H18a2.25 2.25 0 0 0 2.25-2.25V6A2.25 2.25 0 0 0 18 3.75h-2.25A2.25 2.25 0 0 0 13.5 6v2.25a2.25 2.25 0 0 0 2.25 2.25Z"
                             />
                         </svg>
-                    </div>
+                    </a>
                     <div
                         class="bg-transparent border-transparent flex items-center justify-center rounded-md w-10 h-10 border-2 mb-1"
                     >
@@ -102,11 +119,11 @@ const Toggle = () => {
                         >Notes</span
                     >
                 </div>
-                <div class="flex flex-col items-center justify-center mt-2">
-                    <div class="bg-[#3c41e9] h-5 w-5 rounded-md mb-5"></div>
-                    <div class="bg-[#12a779] h-5 w-5 rounded-md mb-5"></div>
-                    <div class="bg-[#ffa40a] h-5 w-5 rounded-md mb-5"></div>
-                    <div class="bg-[#3c41e9] h-5 w-5 rounded-md"></div>
+                <div class="flex flex-col items-center justify-center mt-3">
+                    <div class="bg-[#3c41e9] h-2 w-2 rounded-full mb-8"></div>
+                    <div class="bg-[#12a779] h-2 w-2 rounded-full mb-8"></div>
+                    <div class="bg-[#ffa40a] h-2 w-2 rounded-full mb-8"></div>
+                    <div class="bg-[#3c41e9] h-2 w-2 rounded-full"></div>
                 </div>
             </div>
         </div>
@@ -117,8 +134,13 @@ const Toggle = () => {
                     >Other</span
                 >
             </div>
-            <div
-                class="bg-transparent border-transparent flex items-center justify-center rounded-md w-10 h-10 border-2 mb-2"
+            <a
+                :href="route('Settings', Workspace)"
+                :class="
+                    CurrentPath === '/workspace/' + Workspace.id + '/settings'
+                        ? 'bg-[#00819b30] border-[#00819b53] flex items-center justify-center rounded-md w-10 h-10 border-2 mb-1'
+                        : 'bg-transparent border-transparent flex items-center justify-center rounded-md w-10 h-10 border-2 mb-1'
+                "
             >
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -126,7 +148,12 @@ const Toggle = () => {
                     viewBox="0 0 24 24"
                     stroke-width="1.5"
                     stroke="currentColor"
-                    class="text-[#000000a1] size-6"
+                    :class="
+                        CurrentPath ===
+                        '/workspace/' + Workspace.id + '/settings'
+                            ? 'text-[#00819b53] size-6'
+                            : 'text-[#000000a1] size-6'
+                    "
                 >
                     <path
                         stroke-linecap="round"
@@ -139,7 +166,7 @@ const Toggle = () => {
                         d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
                     />
                 </svg>
-            </div>
+            </a>
             <div
                 class="bg-transparent border-transparent flex items-center justify-center rounded-md w-10 h-10 border-2"
                 @click="Toggle()"
@@ -172,7 +199,15 @@ const Toggle = () => {
                 <div class="flex items-center">
                     <div class="flex flex-col">
                         <img
-                            :src="'../images/Vektora.png'"
+                            :src="
+                                Workspace.id === 38
+                                    ? '/images/Cycle.jpg'
+                                    : Workspace.id === 39
+                                    ? '/images/Odama.png'
+                                    : Workspace.id === 41
+                                    ? '/images/Vektora.png'
+                                    : ''
+                            "
                             class="rounded-md h-9 w-9"
                         />
                     </div>
@@ -180,7 +215,7 @@ const Toggle = () => {
                         <h1
                             class="text-[#000000eb] font-poppins font-medium text-sm"
                         >
-                            Vektora
+                            {{ Workspace.name }}
                         </h1>
                         <span
                             class="text-[#0000008e] font-poppins font-semibold text-[10px] -mt-1"
@@ -215,8 +250,14 @@ const Toggle = () => {
                             >Main Tools</span
                         >
                     </div>
-                    <div
-                        class="bg-transparent border-transparent flex items-center justify-start rounded-md h-10 border-2 w-full mb-1 p-2"
+                    <a
+                        :href="route('Workspace', Workspace)"
+                        :class="
+                            CurrentPath ===
+                            '/workspace/' + Workspace.id + '/dashboard'
+                                ? 'bg-[#00819b30] border-[#00819b53] flex items-center justify-start rounded-md h-10 border-2 w-full mb-1 p-2 cursor-pointer'
+                                : 'bg-transparent border-transparent flex items-center justify-start rounded-md h-10 border-2 w-full mb-1 p-2 cursor-pointer'
+                        "
                     >
                         <div>
                             <svg
@@ -225,7 +266,12 @@ const Toggle = () => {
                                 viewBox="0 0 24 24"
                                 stroke-width="1.5"
                                 stroke="currentColor"
-                                class="text-[#000000a1] size-6"
+                                :class="
+                                    CurrentPath ===
+                                    '/workspace/' + Workspace.id + '/dashboard'
+                                        ? 'text-[#00819b53] size-6'
+                                        : 'text-[#000000a1] size-6'
+                                "
                             >
                                 <path
                                     stroke-linecap="round"
@@ -236,11 +282,16 @@ const Toggle = () => {
                         </div>
                         <div>
                             <span
-                                class="text-[#000000a1] font-poppins text-sm font-medium ms-2"
+                                :class="
+                                    CurrentPath ===
+                                    '/workspace/' + Workspace.id + '/dashboard'
+                                        ? 'text-[#00819b53] font-poppins text-sm font-medium ms-2'
+                                        : 'text-[#000000a1] font-poppins text-sm font-medium ms-2'
+                                "
                                 >Dashboard</span
                             >
                         </div>
-                    </div>
+                    </a>
                     <div
                         class="bg-transparent border-transparent flex items-center justify-start rounded-md h-10 border-2 w-full mb-1 p-2"
                     >
@@ -320,14 +371,18 @@ const Toggle = () => {
                 </div>
                 <div class="flex flex-col items-start mt-2 ms-3">
                     <div class="flex items-center mb-5">
-                        <div class="bg-[#3c41e9] h-5 w-5 rounded-md me-2"></div>
+                        <div
+                            class="bg-[#3c41e9] h-2 w-2 rounded-full me-2"
+                        ></div>
                         <span
                             class="text-[#000000a1] font-poppins text-sm font-medium"
                             >Project Manager</span
                         >
                     </div>
                     <div class="flex items-center mb-5">
-                        <div class="bg-[#12a779] h-5 w-5 rounded-md me-2"></div>
+                        <div
+                            class="bg-[#12a779] h-2 w-2 rounded-full me-2"
+                        ></div>
                         <span
                             class="text-[#000000a1] font-poppins text-sm font-medium"
                             >Human Resource</span
@@ -335,14 +390,18 @@ const Toggle = () => {
                     </div>
 
                     <div class="flex items-center mb-5">
-                        <div class="bg-[#ffa40a] h-5 w-5 rounded-md me-2"></div>
+                        <div
+                            class="bg-[#ffa40a] h-2 w-2 rounded-full me-2"
+                        ></div>
                         <span
                             class="text-[#000000a1] font-poppins text-sm font-medium"
                             >Design</span
                         >
                     </div>
                     <div class="flex items-center mb-5">
-                        <div class="bg-[#3c41e9] h-5 w-5 rounded-md me-2"></div>
+                        <div
+                            class="bg-[#3c41e9] h-2 w-2 rounded-full me-2"
+                        ></div>
                         <span
                             class="text-[#000000a1] font-poppins text-sm font-medium"
                             >Development</span
@@ -358,8 +417,13 @@ const Toggle = () => {
                     >Other</span
                 >
             </div>
-            <div
-                class="bg-transparent border-transparent flex items-center justify-start rounded-md h-10 border-2 w-full mb-2 p-2"
+            <a
+                :href="route('Settings', Workspace)"
+                :class="
+                    CurrentPath === '/workspace/' + Workspace.id + '/settings'
+                        ? 'bg-[#00819b30] border-[#00819b53] flex items-center justify-start rounded-md h-10 border-2 w-full mb-1 p-2'
+                        : 'bg-transparent border-transparent flex items-center justify-start rounded-md h-10 border-2 w-full mb-1 p-2'
+                "
             >
                 <div>
                     <svg
@@ -368,7 +432,12 @@ const Toggle = () => {
                         viewBox="0 0 24 24"
                         stroke-width="1.5"
                         stroke="currentColor"
-                        class="text-[#000000a1] size-6"
+                        :class="
+                            CurrentPath ===
+                            '/workspace/' + Workspace.id + '/settings'
+                                ? 'text-[#00819b53] size-6'
+                                : 'text-[#000000a1] size-6'
+                        "
                     >
                         <path
                             stroke-linecap="round"
@@ -384,11 +453,16 @@ const Toggle = () => {
                 </div>
                 <div>
                     <span
-                        class="text-[#000000a1] font-poppins text-sm font-medium ms-2"
+                        :class="
+                            CurrentPath ===
+                            '/workspace/' + Workspace.id + '/settings'
+                                ? 'text-[#00819b53] font-poppins text-sm font-medium ms-2'
+                                : 'text-[#000000a1] font-poppins text-sm font-medium ms-2'
+                        "
                         >Settings</span
                     >
                 </div>
-            </div>
+            </a>
             <div
                 class="bg-transparent border-transparent flex items-center justify-start rounded-md h-10 border-2 w-full p-2 cursor-pointer"
                 @click="Toggle()"
@@ -419,3 +493,13 @@ const Toggle = () => {
         </div>
     </div>
 </template>
+
+<script>
+export default {
+    data() {
+        return {
+            CurrentPath: window.location.pathname,
+        };
+    },
+};
+</script>
