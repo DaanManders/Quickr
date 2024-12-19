@@ -23,15 +23,7 @@ const Toggle = () => {
                 class="bg-[#ededf088] border-[#dedee288] flex items-center justify-center border-2 rounded-md w-14 h-14"
             >
                 <img
-                    :src="
-                        Workspace.id === 38
-                            ? '/images/Cycle.jpg'
-                            : Workspace.id === 39
-                            ? '/images/Odama.png'
-                            : Workspace.id === 41
-                            ? '/images/Vektora.png'
-                            : ''
-                    "
+                    :src="'/images/EFounders.jpg'"
                     class="rounded-md h-9 w-9"
                 />
             </div>
@@ -199,15 +191,7 @@ const Toggle = () => {
                 <div class="flex items-center">
                     <div class="flex flex-col">
                         <img
-                            :src="
-                                Workspace.id === 38
-                                    ? '/images/Cycle.jpg'
-                                    : Workspace.id === 39
-                                    ? '/images/Odama.png'
-                                    : Workspace.id === 41
-                                    ? '/images/Vektora.png'
-                                    : ''
-                            "
+                            :src="'/images/EFounders.jpg'"
                             class="rounded-md h-9 w-9"
                         />
                     </div>

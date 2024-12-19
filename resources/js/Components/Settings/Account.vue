@@ -8,7 +8,7 @@ const LogOut = () => {
 
 <template>
     <div
-        class="bg-[#ffffff] border-[#dedee2] border-2 rounded-md w-[98%] h-40 p-5"
+        class="bg-[#ffffff] border-[#dedee2] border-2 rounded-md w-[98%] h-full p-5"
     >
         <div class="flex flex-col justify-between h-full">
             <div class="flex relative justify-between items-center w-full">

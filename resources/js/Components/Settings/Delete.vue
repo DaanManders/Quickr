@@ -11,7 +11,7 @@ const DeleteWorkspace = () =>
 
 <template>
     <div
-        class="bg-[#ffffff] border-[#dedee2] border-2 rounded-md w-[98%] h-32 p-5"
+        class="bg-[#ffffff] border-[#dedee2] border-2 rounded-md w-[98%] h-1/3 p-5"
     >
         <div class="flex flex-col h-full">
             <div class="flex relative justify-start items-center w-full">
